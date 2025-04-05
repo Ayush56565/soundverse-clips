@@ -2,14 +2,14 @@ from fastapi import FastAPI
 from starlette_exporter import PrometheusMiddleware, handle_metrics
 from app.api.routes.clips import router as clips_router
 from app.core.config import settings
-from app.db.models import Base, Clip
+from app.db.models import Base, AudioClip
 from app.db.database import engine, SessionLocal
 from sqlalchemy.orm import Session
 
 def seed_data():
     db: Session = SessionLocal()
     try:
-        existing = db.query(Clip).first()
+        existing = db.query(AudioClip).first()
         if existing:
             print("Seed data already exists. Skipping seeding.")
             return
@@ -60,7 +60,7 @@ def seed_data():
         ]
 
         for clip in SEED_CLIPS:
-            db.add(Clip(**clip))
+            db.add(AudioClip(**clip))
         db.commit()
         print("Database seeded successfully.")
     except Exception as e:
