@@ -148,14 +148,6 @@ The PostgreSQL database is seeded with 6 sample clips on startup, including:
 - Jazz piano
 - Tech house
 
-## Deployment
-
-For production deployment:
-1. Update the `.env` file with secure credentials
-2. Configure proper volume mounts for persistent data
-3. Set up proper networking and security
-
-## Development
 
 To add more features:
 1. Add new endpoints in `app/api/routes/clips.py`
