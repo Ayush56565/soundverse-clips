@@ -148,9 +148,25 @@ The PostgreSQL database is seeded with 6 sample clips on startup, including:
 - Jazz piano
 - Tech house
 
+## Screenshots
 
-To add more features:
-1. Add new endpoints in `app/api/routes/clips.py`
-2. Implement business logic in `app/services/clips.py`
-3. Update database models in `app/db/models.py` if needed
-4. Add new metrics to Prometheus/Grafana as required
+### 🖼️ 1. FastAPI docs
+The APIs are available to test in the swagger UI.  
+![Upload Screen](screenshots/swagger1.png)
+
+### 🖼️ 2. MP3 Streaming API   
+The system streams the required clip and provides a download link.   
+![Processing Screen](screenshots/swagger.png)
+
+### 🖼️ 3. Grafana Dashboard  
+The API service can be monitored based on Total Streams Over Time, Total Streams(Cumulative), Streaming Response Duration, API Request Duration
+![Enhanced Video](screenshots/grafana.png)
+  
+Requests in progress, Total API requests, and Top Streamed Clips are recorded.
+![Enhanced Video](screenshots/grafana1.png)
+
+### 🖼️ 4. Prometheus graph 
+The clips_top_streamed_total metric is monitored.
+![Enhanced Video](screenshots/prometheus.png)
+
+---
